@@ -11,7 +11,7 @@ If python exist in system
 
 In Linux platform
 1. python3 ttt.py
-call the interpreter
+  call the interpreter
 2. Make sure the first line of your file has #!/usr/bin/env python.
 3. Make it executable - chmod +x ttt.py.
 4. And run it as ./ttt.py
