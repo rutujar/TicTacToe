@@ -1,4 +1,4 @@
-$ pip freeze > requeriments.txt
+$ pip freeze > requirements.txt
  
 # installing dependencies from file
-$ pip install -r requeriments.txt
+$ pip install -r requirements.txt
