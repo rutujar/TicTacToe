@@ -1,9 +1,9 @@
 language: python
-
+sudo: enabled
 python:
 
   - "3.6"
 
-script: pytest
-
+script: 
+- python ttt.py
 
