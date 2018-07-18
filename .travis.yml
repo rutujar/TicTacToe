@@ -1,5 +1,5 @@
 language: python
-sudo: enabled
+sudo: false
 python:
 
   - "3.6"
