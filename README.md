@@ -1,4 +1,10 @@
 TicTactoe
+
+.. image:: https://travis-ci.org/rutujar/TicTacToe.svg?branch=master
+    :target: https://travis-ci.org/rutujar/TicTacToe
+
+
+
 The game designed in python language.
 
 Instruction
