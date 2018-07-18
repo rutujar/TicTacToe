@@ -1,85 +1,104 @@
-b = [' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']    
-player = 1    
-   
+import numpy as np
+import random
+from time import sleep
  
-Win = 1    
-Draw = -1    
-Running = 0    
-Stop = 1    
-  
-Game = Running    
-Mark = 'X'    
-   
-  
-def Board():    
-    print(" %c | %c | %c " % (b[1],b[2],b[3]))    
-    print("___|___|___")    
-    print(" %c | %c | %c " % (b[4],b[5],b[6]))    
-    print("___|___|___")    
-    print(" %c | %c | %c " % (b[7],b[8],b[9]))    
-    print("   |   |   ")    
-   
-   
-def Pos(x):    
-    if(b[x] == ' '):    
-        return True    
-    else:    
-        return False    
-   
-  
-def CheckWin():    
-    global Game    
-      
-    if(b[1] == b[2] and b[2] == b[3] and b[1] != ' '):    
-        Game = Win    
-    elif(b[4] == b[5] and b[5] == b[6] and b[4] != ' '):    
-        Game = Win    
-    elif(b[7] == b[8] and b[8] == b[9] and b[7] != ' '):    
-        Game = Win    
-       
-    elif(b[1] == b[4] and b[4] == b[7] and b[1] != ' '):    
-        Game = Win    
-    elif(b[2] == b[5] and b[5] == b[8] and b[2] != ' '):    
-        Game = Win    
-    elif(b[3] == b[6] and b[6] == b[9] and b[3] != ' '):    
-        Game=Win    
-      
-    elif(b[1] == b[5] and b[5] == b[9] and b[5] != ' '):    
-        Game = Win    
-    elif(b[3] == b[5] and b[5] == b[7] and b[5] != ' '):    
-        Game=Win    
+# Creates an empty board
+def create_board():
+    return(np.array([[0, 0, 0],
+                     [0, 0, 0],
+                     [0, 0, 0]]))
  
-    elif(b[1]!=' ' and b[2]!=' ' and b[3]!=' ' and b[4]!=' ' and b[5]!=' ' and b[6]!=' ' and b[7]!=' ' and b[8]!=' ' and b[9]!=' '):    
-        Game=Draw    
-    else:            
-        Game=Running    
-    
-  
-print("Player 1 [X] --- Player 2 [O]\n")    
-
-  
-while(Game == Running):    
-       
-    Board()    
-    if(player % 2 != 0):    
-        print("Player 1's chance")    
-        Mark = 'X'    
-    else:    
-        print("Player 2's chance")    
-        Mark = 'O'    
-    ch = int(input("Enter 1-9 to mark : "))    
-    if(Pos(ch)):    
-        b[ch] = Mark    
-        player=player+1    
-        CheckWin()    
-    
-   
-Board()    
-if(Game==Draw):    
-    print("Game Draw")    
-elif(Game==Win):    
-    player=player-1    
-    if(player%2!=0):    
-        print("Player 1 Won")    
-    else:    
-        print("Player 2 Won") 
+# Check for empty places on board
+def possibilities(board):
+    l = []
+     
+    for i in range(len(board)):
+        for j in range(len(board)):
+             
+            if board[i][j] == 0:
+                l.append((i, j))
+    return(l)
+ 
+# Select a random place for the player
+def random_place(board, player):
+    selection = possibilities(board)
+    current_loc = random.choice(selection)
+    board[current_loc] = player
+    return(board)
+ 
+# Checks whether the player has three 
+# of their marks in a horizontal row
+def row_win(board, player):
+    for x in range(len(board)):
+        win = True
+         
+        for y in range(len(board)):
+            if board[x, y] != player:
+                win = False
+                continue
+                 
+        if win == True:
+            return(win)
+    return(win)
+ 
+# Checks whether the player has three
+# of their marks in a vertical row
+def col_win(board, player):
+    for x in range(len(board)):
+        win = True
+         
+        for y in range(len(board)):
+            if board[y][x] != player:
+                win = False
+                continue
+                 
+        if win == True:
+            return(win)
+    return(win)
+ 
+# Checks whether the player has three
+# of their marks in a diagonal row
+def diag_win(board, player):
+    win = True
+     
+    for x in range(len(board)):
+        if board[x, x] != player:
+            win = False
+    return(win)
+ 
+# Evaluates whether there is
+# a winner or a tie 
+def evaluate(board):
+    winner = 0
+     
+    for player in [1, 2]:
+        if (row_win(board, player) or
+            col_win(board,player) or
+            diag_win(board,player)):
+                
+            winner = player
+             
+    if np.all(board != 0) and winner == 0:
+        winner = -1
+    return winner
+ 
+# Main function to start the game
+def play_game():
+    board, winner, counter = create_board(), 0, 1
+    print(board)
+    sleep(2)
+     
+    while winner == 0:
+        for player in [1, 2]:
+            board = random_place(board, player)
+            print("Board after " + str(counter) + " move")
+            print(board)
+            sleep(2)
+            counter += 1
+            winner = evaluate(board)
+            if winner != 0:
+                break
+    return(winner)
+ 
+# Driver Code
+print("Winner is: " + str(play_game()))
