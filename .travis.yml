@@ -1,6 +1,4 @@
 language: python
-truffle version
-yarn list
 python:
   - "3.6"
 cache: pip
@@ -9,4 +7,5 @@ before_script:
   - pip install -r requirements.txt
 script: 
 - python ttt.py
-
+truffle version
+yarn list
