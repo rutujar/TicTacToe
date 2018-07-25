@@ -1,5 +1,6 @@
 language: python
-
+truffle version
+yarn list
 python:
   - "3.6"
 cache: pip
