@@ -7,4 +7,3 @@ before_script:
   - pip install -r requirements.txt
 script: 
   - python ttt.py
-  - python tttt.py
