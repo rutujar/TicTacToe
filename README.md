@@ -20,3 +20,8 @@ In Linux platform
 2. Make sure the first line of your file has #!/usr/bin/env python.
 3. Make it executable - chmod +x ttt.py.
 4. And run it as ./ttt.py
+
+
+TRAVIS CI
+
+To run TicTacToe in Travis fork my repository and build trigger.
