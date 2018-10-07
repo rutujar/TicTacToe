@@ -22,6 +22,6 @@ If python exist in system
 4. And run it as ./ttt.py
 
 
-TRAVIS CI
+# TRAVIS CI
 
 To run TicTacToe in Travis fork my repository and build trigger.
