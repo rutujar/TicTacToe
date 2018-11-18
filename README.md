@@ -1,8 +1,8 @@
 # TicTacToe
 
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea7d8f5fe3504539ae827ce971283667)](https://app.codacy.com/app/rutujar/TicTacToe?utm_source=github.com&utm_medium=referral&utm_content=rutujar/TicTacToe&utm_campaign=Badge_Grade_Dashboard)
- Travis CI   | [![Build Status](https://travis-ci.org/rutujar/TicTacToe.svg?branch=master)](https://travis-ci.org/rutujar/TicTacToe) 
+
+ Travis CI   | [![Build Status](https://travis-ci.org/rutujar/TicTacToe.svg?branch=master)](https://travis-ci.org/rutujar/TicTacToe) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea7d8f5fe3504539ae827ce971283667)](https://app.codacy.com/app/rutujar/TicTacToe?utm_source=github.com&utm_medium=referral&utm_content=rutujar/TicTacToe&utm_campaign=Badge_Grade_Dashboard)  
 ------------ | -------------
 
 
