@@ -1,7 +1,7 @@
 # TicTacToe
 
 
- Travis CI   | [![Build Status](https://travis-ci.org/rutujar/TicTacToe.svg?branch=master)](https://travis-ci.org/rutujar/TicTacToe) .. image:: https://api.codacy.com/project/badge/Grade/6ca383a1fd3b44ed83de6b94965986d9    :target: https://www.codacy.com/app/rutujar/TicTacToe?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=rutujar/TicTacToe&amp;utm_campaign=Badge_Grade
+ Travis CI   | [![Build Status](https://travis-ci.org/rutujar/TicTacToe.svg?branch=master)](https://travis-ci.org/rutujar/TicTacToe) 
 ------------ | -------------
 
 
