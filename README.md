@@ -7,7 +7,6 @@
  code Review | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/ea7d8f5fe3504539ae827ce971283667)](https://app.codacy.com/app/rutujar/TicTacToe?utm_source=github.com&utm_medium=referral&utm_content=rutujar/TicTacToe&utm_campaign=Badge_Grade_Dashboard)  
 
 
-
 The game designed in python language.
 
 # Instruction
@@ -28,4 +27,9 @@ If python exist in system
 
 # TRAVIS CI
 
-To run TicTacToe in Travis fork my repository and build trigger.
+To run TicTacToe:
+
+* Fork the repository
+* Open Travis Ci
+* Enable the repository
+* Build the trigger
